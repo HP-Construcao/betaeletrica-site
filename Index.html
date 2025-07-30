@@ -1,0 +1,357 @@
+quero por o site no ar
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Elétrica - Soluções Elétricas em Jacareí e Região</title>
+    <meta name="description" content="Eletricista profissional em Jacareí e Vale do Paraíba. Serviços de instalações, manutenções, quadros elétricos e mais. Empresa formalizada com CNPJ. Sua tranquilidade é nossa prioridade.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005A9C;
+            --secondary-color: #FFC107;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --white-color: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--white-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .logo span {
+            color: var(--secondary-color);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a:focus {
+            color: var(--primary-color);
+            outline: none;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url(https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80) no-repeat center center/cover;
+            height: 100vh;
+            color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+        .hero .container {
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .cta-button:hover,
+        .cta-button:focus {
+            transform: scale(1.05);
+            background-color: #ffca2c;
+            outline: none;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        #about {
+            background: var(--white-color);
+        }
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        #contact {
+            text-align: center;
+        }
+        .contact-info {
+            margin-top: 2rem;
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: var(--dark-color);
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 95vw;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100vw;
+                background: var(--white-color);
+                position: absolute;
+                top: 75px;
+                left: 0;
+                padding: 1rem 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .service-card h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Beta<span>Elétrica</span></div>
+            <nav aria-label="Menu principal">
+                <button class="menu-toggle" id="mobile-menu"
+                    aria-label="Abrir menu"
+                    aria-controls="nav-list"
+                    aria-expanded="false"
+                    tabindex="0">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="home" aria-label="Destaque">
+            <div class="container">
+                <h1>Soluções Elétricas Seguras e Profissionais</h1>
+                <p>Sua tranquilidade é nossa prioridade.</p>
+                <a href="https://api.whatsapp.com/send?phone=5512991082457&text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+                   class="cta-button" target="_blank" rel="noopener">Fale Conosco pelo WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="services" aria-label="Nossos Serviços">
+            <div class="container">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">⚡</div>
+                        <h3>Instalações Elétricas</h3>
+                        <p>Projetos e execuções completas em residências, comércios e indústrias, seguindo todas as normas de segurança.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">🔧</div>
+                        <h3>Manutenção e Reparos</h3>
+                        <p>Diagnóstico e solução de problemas elétricos, curtos-circuitos, fugas de corrente e manutenções preventivas.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">📊</div>
+                        <h3>Quadros de Distribuição</h3>
+                        <p>Montagem, organização e adequação de quadros de disjuntores (QDC) para garantir a segurança e eficiência do seu sistema.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">💡</div>
+                        <h3>Projetos de Iluminação</h3>
+                        <p>Instalação de luminárias, spots, fitas de LED e sistemas de iluminação inteligentes para valorizar seu ambiente.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">🔌</div>
+                        <h3>Padrão de Entrada</h3>
+                        <p>Instalação e adequação de padrão de entrada de energia (poste) conforme as normas da concessionária local (EDP).</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon" aria-hidden="true">📜</div>
+                        <h3>Laudos e Vistorias</h3>
+                        <p>Emissão de laudos técnicos e vistorias para sua segurança, regularização ou para fins de seguro e fiscalização.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" aria-label="Sobre a Beta Elétrica">
+            <div class="container">
+                <h2 class="section-title">Sobre a Beta Elétrica</h2>
+                <p>
+                    A Beta Elétrica nasceu da paixão por oferecer serviços elétricos com o mais alto padrão de qualidade e segurança. Somos uma empresa formalizada (CNPJ: 39.858.072/0001-00), comprometida com a excelência técnica e o respeito às normas, em especial a NBR 5410. Atuando em Jacareí e todo o Vale do Paraíba, nossa missão é simples: garantir que sua instalação elétrica seja fonte de conforto e tranquilidade, e nunca de preocupação.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" aria-label="Contato">
+            <div class="container">
+                <h2 class="section-title">Solicite um Orçamento</h2>
+                <div class="contact-info">
+                    <p>Pronto para resolver seu problema elétrico com um profissional qualificado?<br>Entre em contato agora mesmo!</p>
+                    <a href="https://api.whatsapp.com/send?phone=5512991082457&text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+                       class="cta-button" target="_blank" rel="noopener">WhatsApp: (12) 99108-2457</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Beta Elétrica - Todos os direitos reservados.</p>
+            <p>CNPJ: 39.858.072/0001-00 | Jacareí - SP</p>
+        </div>
+    </footer>
+    <script>
+        // Script para menu mobile acessível
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        mobileMenu.addEventListener('click', () => {
+            const expanded = mobileMenu.getAttribute('aria-expanded') === 'true';
+            mobileMenu.setAttribute('aria-expanded', !expanded);
+            navList.classList.toggle('active');
+        });
+        mobileMenu.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                mobileMenu.click();
+            }
+        });
+    </script>
+</body>
+</html>
